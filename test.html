@@ -1,0 +1,45 @@
+﻿<html>
+<head>
+    <title>SOAP JavaScript Client Test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/jquery.soap.js"></script>
+    <script type="text/javascript">
+
+        function soap() {
+
+
+            $.soap({
+                url: 'http://esriindia.niit-tech.in/eesserv/Service.asmx/',
+                method: 'returnAll',
+               
+
+                data: {
+                    tablename: 'user_details',
+                    imei: '124567'
+                },
+              
+                success: function (soapResponse) {
+                    // do stuff with soapResponse
+                    // if you want to have the response as JSON use soapResponse.toJSON();
+                    // or soapResponse.toString() to get XML string
+                    // or soapResponse.toXML() to get XML DOM
+                },
+                error: function (SOAPResponse) {
+                    // show error
+                }
+            });
+
+
+
+      
+        }
+    </script>
+</head>
+<body>
+    <form name="Demo" action="" method="post">
+        <div>
+            <input type="button" value="Soap" onclick="soap();" />
+        </div>
+    </form>
+</body>
+</html> <!-- typo -->
